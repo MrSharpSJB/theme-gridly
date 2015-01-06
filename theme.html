@@ -44,21 +44,17 @@
           <div class="logo">
             <h1><a href="/" rel="home">{{ site.name }}</a></h1>
           </div>
-          </div class="search">
-            <script>
-  (function() {
-    var cx = '007428626993548712435:n6wlcinxmeu';
-    var gcse = document.createElement('script');
-    gcse.type = 'text/javascript';
-    gcse.async = true;
-    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-        '//www.google.com/cse/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(gcse, s);
-  })();
-</script>
-<gcse:search></gcse:search>
-          </div>
+          <div class="widget widget-tagcloud">
+              <h2 class="widget-title">Tag Cloud</h2>
+              <div class="widget-content tag-cloud">
+                {% if site.tags %}
+                <ul>
+                  {% for tag in site.tags %}
+                  <li><a href="/tag/{{ tag.name }}">#{{ tag.name }}</a></li>
+                  {% endfor %}
+                </ul>
+                {% endif %}
+              </div>
           <nav id="nav">
             <ul>
               <li><a href="/">Home</a></li>
